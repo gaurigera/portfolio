@@ -1,23 +1,12 @@
 import React from "react";
-import { useProgress } from "@react-three/drei";
-import { useRender } from "../contexts/RenderContextProvider";
+import { GridLoader } from "react-spinners";
 
 const Loading = () => {
-  const { progress } = useProgress();
-  const { setRender, end, setEnd, hasScroll, setHasScroll } =
-    useRender();
   return (
-    <div className="absolute w-full h-full">
-      <div className={`${progress === 100 ? "visible" : "invisible"}`}>
-        <p className="text-white">Gauri Gera</p>
-        <button
-          className="bg-white"
-          onClick={() => {
-            setRender(true);
-          }}
-        >
-          Visit Island?
-        </button>
+    <div className="flex w-full h-full justify-center items-center">
+      <div className="">
+        <GridLoader
+          color="pink" />
       </div>
     </div>
   );

@@ -1,9 +1,5 @@
 import React, { useEffect, useMemo, useRef } from "react";
 import {
-  Environment,
-  Line,
-  OrbitControls,
-  OrthographicCamera,
   PerspectiveCamera,
   Preload,
   ScrollControls,
@@ -11,9 +7,7 @@ import {
   useGLTF,
   useScroll,
 } from "@react-three/drei";
-import { Suspense } from "react";
-import Loader from "./Loader.jsx";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { useHelper } from "@react-three/drei";
 import {
   SpotLightHelper,
@@ -31,14 +25,13 @@ import { useRender } from "../contexts/RenderContextProvider.jsx";
 import { Model } from "./Model.jsx";
 
 function RenderModel() {
-  const hexagon = useGLTF("/src/assets/model/shiny_forest/scene.gltf");
   // const spotlightRef = useRef();
   // useHelper(spotlightRef, SpotLightHelper, "cyan");
   // const camera = useRef();
   // camera.lookAt([-4,3,-6])
   // useHelper(camera, CameraHelper);
-  const pointlightRef = useRef();
-  useHelper(pointlightRef, PointLightHelper, 1, "cyan");
+  // const pointlightRef = useRef();
+  // useHelper(pointlightRef, PointLightHelper, 1, "cyan");
   // const directionalLightRef = useRef();
   // useHelper(directionalLightRef, DirectionalLightHelper, 2, "cyan");
   // const { camera } = useThree();
@@ -59,10 +52,11 @@ function RenderModel() {
   const curve = useMemo(() => {
     return new CatmullRomCurve3(
       [
+        new Vector3(7.010824808636369, 1.939916465598, 5.945751822922535),
+        new Vector3(1.9710824808636369, 1.99999999999, 6.9751822922535),
         new Vector3(1.1710824808636369, 1.991854916465598, 4.65751822922535),
-        // new Vector3(0.1710824808636369, 0.923451154916, 2.9751822922535),
-        new Vector3(-0.78889999999, 0.5923451154916, 1.9751822922535),
-        new Vector3(-0.77777773262, 0.53451154916, -0.9751822922535),
+        new Vector3(-0.78889999999, 1.923451154916, 1.9751822922535),
+        new Vector3(-0.77777773262, 1.93451154916, -0.9751822922535),
         // new Vector3(-1.000099999, 0.973451154916, 0.09992922535),
         // new Vector3(-0.659999, 0.523451154916, -1.822922535),
         // new Vector3(-1.397999086, 0.993451154916, -0.51822922535),
@@ -98,25 +92,55 @@ function RenderModel() {
     );
 
     const currPoint = linePoints[currPointIndex];
-    
+
     // CameraGroup.current.lookAt(new Vector3(-5, 20, 0));
 
-    CameraGroup.current.position.lerp(currPoint, delta * 24);
+    CameraGroup.current.position.lerp(currPoint, delta * 40);
   });
+
+  //     const tl = new TimelineMax();
+
+  //   // Iterate through the points and add tween animations
+  //   for (let i = 0; i < points.length; i++) {
+  //     const point = points[i];
+
+  //     // Tween camera position to the next point
+  //     tl.to(camera.position, 2, {
+  //       x: point.x,
+  //       y: point.y,
+  //       z: point.z,
+  //       ease: Power1.easeInOut,
+  //     });
+  //   }
+
+  //   // Start the timeline
+  //   tl.play();
+  // };
+
+  // // Usage
+  // const points = [
+  //   new Vector3(4.010824808636369, .939916465598, 2.945751822922535),
+  //   new Vector3(2.9710824808636369,.923451154916, 2.9751822922535),
+  //   new Vector3(1.1710824808636369, 1.991854916465598, 4.65751822922535),
+  //   new Vector3(-0.78889999999, 1.923451154916, 1.9751822922535),
+  //   new Vector3(-0.77777773262, 1.93451154916, -0.9751822922535),
+  //   // Add more points as needed
+  // ];
 
   return (
     <>
-      <group ref={CameraGroup}>
+      <group>
         <PerspectiveCamera
-          position={[1.110824808636369, 2.9999916465598, 0.45751822922535]}
+          position={[4.010824808636369, 3.9999916465598, 3.945751822922535]}
           // position={[1, 2, 2]}
-          far={100}
+          far={50}
           near={0.1}
+          ref={CameraGroup}
           makeDefault
         />
       </group>
-      <group position={[1.3, 0.5, 2]}>
-        {/* <Text
+      {/* <group position={[1.3, 0.5, 2]}> */}
+      {/* <Text
           color={"pink"}
           anchorX={"center"}
           anchorY={"bottom-baseline"}
@@ -124,9 +148,9 @@ function RenderModel() {
         >
           Hi! My name is Gauri
         </Text> */}
-      </group>
-      {/* <group> */}
-      {/* <mesh frustumCulled>
+      {/* </group> */}
+      {/* <group>
+        <mesh frustumCulled>
           <extrudeGeometry
             args={[
               shape,
@@ -138,8 +162,8 @@ function RenderModel() {
             ]}
           />
           <meshStandardMaterial color={"white"} opacity={0.5} transparent />
-        </mesh> */}
-      {/* </group> */}
+        </mesh>
+      </group> */}
       <mesh>
         <pointLight
           intensity={2}
@@ -148,7 +172,7 @@ function RenderModel() {
         />
         <pointLight
           intensity={9}
-          color={"purple"}
+          color={"hsl(343, 100%, 39%)"}
           position={[1.57, 5, 2]}
           // ref={pointlightRef}
         />
@@ -157,11 +181,7 @@ function RenderModel() {
           color={"hsl(23, 95%, 75%)"}
           position={[-2.9, 6, 0.9]}
         />
-        <pointLight
-          intensity={1}
-          color={"green"}
-          position={[1.8, 2, 1.7]}
-        />
+        <pointLight intensity={2} color={"green"} position={[1.8, 2, 1.7]} />
         <pointLight
           intensity={10}
           color={"hsl(23, 95%, 75%)"}
@@ -174,17 +194,21 @@ function RenderModel() {
           position={[0.34, 1.5, -1.91]}
         />
         <pointLight
-          intensity={6}
+          intensity={1}
           color={"hsl(344, 89%, 59%)"}
           position={[2, 1.5, 2]}
         />
-        <pointLight intensity={5} color={"pink"} position={[2, 2, 0.4]} />
+        <pointLight
+          intensity={15}
+          color={"hsl(343, 100%, 39%)"}
+          position={[2, 2, 0.4]}
+        />
         <spotLight intensity={14} color={"red"} position={[-5, 5, 2.3]} />
-        <spotLight intensity={4} color={"red"} position={[2.3, 3.2, -0.3]} />
+        <spotLight intensity={14} color={"red"} position={[2.9, 6.2, -0.3]} />
         {/* <spotLight intensity={4} color={"purple"} position={[2, 5, -3]} /> */}
-        <spotLight intensity={4} color={"red"} position={[1, 4, 1]} />
+        <spotLight intensity={18} color={"red"} position={[1, 4, -3]} />
         {/* <spotLight intensity={3} color={"purple"} position={[0, 2, 1]} /> */}
-        <spotLight intensity={1} color={"red"} position={[1, 2.8, 1.6]} />
+        <spotLight intensity={18} color={"red"} position={[-6, 4, -2]} />
         <pointLight intensity={5} color={"orange"} position={[-1.5, 2.3, 1]} />
         <pointLight
           intensity={8}
@@ -193,9 +217,11 @@ function RenderModel() {
           // ref={pointlightRef}
         />
         <spotLight
-          intensity={6}
+          intensity={20}
           color={"hsl(11, 80%, 60%)"}
-          position={[1, 2.3, -1]}
+          position={[-3, 4.3, -2]}
+          angle={1.57}
+          // ref={spotlightRef}
         />
         <directionalLight
           intensity={1}
@@ -213,8 +239,6 @@ function RenderModel() {
           color={"amber"}
           position={[-1, 3, -1]}
         />
-        {/* <texture /> */}
-        {/* <primitive object={hexagon.scene} scale={0.49} position={[0, 0, 0]} /> */}
         <Model position={[0, 0, 0]} />
       </mesh>
     </>
@@ -222,41 +246,4 @@ function RenderModel() {
 }
 
 // gsap.registerPlugin(ScrollTrigger);
-const ModelCanvas = () => {
-  const {render} = useRender();
-  return (
-    <>
-      <Canvas
-      // frameloop="demand"
-      // camera={{
-      //   position: [1.1710824808636369, 0.9991854916465598, 4.65751822922535],
-      //   fov: 70,
-      // }}
-      // gl={{ preserveDrawingBuffer: true }}
-      >
-        <Suspense fallback={Loader}>
-          {/* <Environment
-            background={"only"}
-            files={"/src/assets/body-water-cloudy-sky-during-sunset.hdr"}
-            frustumCulled
-          /> */}
-          <OrbitControls
-            enableZoom={false}
-            enableRotate={false}
-            target={[-1, .9999, -3]}
-            makeDefault
-          />
-          <ScrollControls pages={9} damping={0.03}>
-            {/* <OrbitControls enableZoom={true} enableRotate={true} /> */}
-            <RenderModel />
-          </ScrollControls>
-        </Suspense>
-        //The X axis is red, the Y axis is green and the Z axis is blue.
-        {/* <axesHelper args={[10]} /> */}
-        <Preload all />
-      </Canvas>
-    </>
-  );
-};
-
-export default ModelCanvas;
+export default RenderModel;

@@ -1,8 +1,23 @@
-import React from "react";
-import ModelCanvas from "./RenderModel";
+import React, { useEffect, useState } from "react";
+import ModelCanvas from "./ModelCanvas";
 import Loading from "./Loading";
+import { useProgress } from "@react-three/drei";
+import Landing from "./Landing";
 
 function Hero() {
+  const { progress } = useProgress();
+
+  const [showLanding, setShowLanding] = useState(false);
+
+  const handleTimeout = () => {
+    setTimeout(() => {
+      setShowLanding(true);
+    }, 2000); // Adjust timeout duration (in milliseconds)
+  };
+  useEffect(() => {
+    handleTimeout();
+  }, []);
+
   return (
     <section className="w-full h-screen">
       {/* <div className="w-full h-full flex flex-col justify-centre p-10 sm:p-20 md:p-36 lg:flex-row">
@@ -25,9 +40,15 @@ function Hero() {
           </p>
         </div>
       </div> */}
+      {/* <Loading /> */}
       <div className="h-full">
-        <Loading />
-        <ModelCanvas />
+        {progress < 100 || !showLanding ? (
+          <Loading />
+        ) :(
+          <>
+            <Landing /> <ModelCanvas />
+          </>
+        )}
       </div>
     </section>
   );
