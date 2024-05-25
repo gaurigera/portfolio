@@ -2,7 +2,7 @@ import React from "react";
 import {
   PerspectiveCamera,
 } from "@react-three/drei";
-import { Model } from "./Model.jsx";
+import { Model } from "./model/Model.jsx";
 
 function RenderModel() {
   return (

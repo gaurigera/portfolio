@@ -1,7 +1,7 @@
 import React from "react";
 import { OrbitControls, Preload } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import RenderModel from "./RenderModel.jsx";
+import RenderModel from "../RenderModel.jsx";
 
 const ModelCanvas = () => {
   return (

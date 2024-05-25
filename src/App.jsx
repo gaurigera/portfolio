@@ -7,6 +7,7 @@ import About from "./components/About";
 import Resume from "./components/Resume";
 import Experience from "./components/Experience";
 import Hero from "./components/Hero";
+import Layout from "./components/Layout";
 
 export default function App() {
   return (
@@ -14,11 +15,7 @@ export default function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Hero />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/resume" element={<Resume />} />
+          <Route path="/" element={<Layout />} />
         </Routes>
       </Router>
     </main>
