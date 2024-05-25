@@ -3,84 +3,11 @@
 @import "tailwindcss/utilities";
 @import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
 
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
 @font-face {
   font-family: "custom-font";
   src: url("../public/fonts/carltine-font/CarltineMedium-MVnzn.ttf");
   font-family: "custom-font2";
   src: url("../public/fonts/carltine-font/CarltineThin-vm6V4.ttf");
-}
-
-@layer utilities {
-  .custom-background {
-    background-color: rgb(202, 138, 4);
-    background-image: radial-gradient(
-        at 21.24% 86.17%,
-        rgb(147, 51, 234) 0,
-        transparent 89%
-      ),
-      radial-gradient(at 14.49% 82%, rgb(253, 164, 175) 0, transparent 63%),
-      radial-gradient(at 30.42% 28.73%, rgb(168, 85, 247) 0, transparent 100%),
-      radial-gradient(at 86.17% 57%, rgb(139, 92, 246) 0, transparent 82%),
-      radial-gradient(at 44.36% 13.67%, rgb(251, 191, 36) 0, transparent 100%),
-      radial-gradient(at 51.11% 35.17%, rgb(244, 63, 94) 0, transparent 45%),
-      radial-gradient(at 51.99% 54.07%, rgb(29, 78, 216) 0, transparent 59%),
-      radial-gradient(at 82.96% 7%, rgb(126, 34, 206) 0, transparent 100%),
-      radial-gradient(at 8.19% 8.33%, rgb(239, 68, 68) 0, transparent 32%),
-      radial-gradient(at 70.91% 65.07%, rgb(88, 28, 135) 0, transparent 100%);
-  }
-  .second-background {
-    background-color: rgb(142, 77, 226);
-    background-image: radial-gradient(
-        at 42.81% 41.17%,
-        rgba(123, 50, 156, 0.733) 0,
-        transparent 75%
-      ),
-      radial-gradient(
-        at 38.72% 94.33%,
-        rgba(71, 105, 179, 0.781) 0,
-        transparent 65%
-      ),
-      radial-gradient(
-        at 16.7% 22.67%,
-        rgba(158, 41, 204, 0.808) 0,
-        transparent 28%
-      ),
-      radial-gradient(
-        at 98.01% 96.83%,
-        rgba(212, 106, 186, 0.842) 0,
-        transparent 56%
-      ),
-      radial-gradient(
-        at 24.12% 65.33%,
-        rgba(226, 68, 131, 0.76) 0,
-        transparent 94%
-      ),
-      radial-gradient(at 83.3% 70%, rgba(58, 58, 71, 0.801) 0, transparent 43%),
-      radial-gradient(
-        at 77.65% 18.17%,
-        rgba(121, 51, 234, 0.699) 0,
-        transparent 25%
-      ),
-      radial-gradient(
-        at 64.05% 41.5%,
-        rgba(194, 73, 25, 0.836) 0,
-        transparent 80%
-      ),
-      radial-gradient(at 40.15% 13.17%, rgb(75, 101, 172) 0, transparent 61%);
-  }
-  .card-background {
-    background-color: rgb(202, 138, 4);
-    background-image: radial-gradient(
-        at 20.02% 86%,
-        rgb(107, 33, 168) 0,
-        transparent 100%
-      ),
-      radial-gradient(at 58.85% 39%, rgb(139, 92, 246) 0, transparent 100%),
-      radial-gradient(at 53.54% -0.83%, rgb(252, 211, 77) 0, transparent 100%),
-      radial-gradient(at 78.76% 30%, rgb(244, 63, 94) 0, transparent 45%),
-      radial-gradient(at 88.72% 38.17%, rgb(29, 78, 216) 0, transparent 59%),
-      radial-gradient(at 94.8% 7.9%, rgb(126, 34, 206) 0, transparent 100%),
-      radial-gradient(at 97.35% 29.17%, rgb(239, 68, 68) 0, transparent 32%),
-      radial-gradient(at 75.66% 86%, rgb(88, 28, 135) 0, transparent 100%);
-  }
 }
