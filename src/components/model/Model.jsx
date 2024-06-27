@@ -6,7 +6,7 @@ Source: https://sketchfab.com/3d-models/baby-robot-769ba821f3594e4aaa905baf417e0
 Title: Baby Robot
 */
 import React, { useRef } from "react";
-import { useGLTF, useScroll } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -16,23 +16,16 @@ export function Model(props) {
   );
 
   const headRef = useRef();
-  const roboRef = useRef();
   const tl = useRef();
 
-  useGSAP(() => {
-    tl.current = gsap.timeline({ repeat: -1, yoyo: true });
-    tl.current
-      .to(headRef.current.rotation, { x: -0.443, duration: 1 })
-      .to(headRef.current.rotation, { x: -0.593, duration: 1 });
-  });
-
   // useGSAP(() => {
+  //   tl.current = gsap.timeline({ repeat: -1, yoyo: true });
   //   tl.current
-  //   .to(roboRef.current.position, { x: 3, duration: 1})
+  //     .to(headRef.current.rotation, { x: -0.443, duration: 1 })
+  //     .to(headRef.current.rotation, { x: -0.593, duration: 1 });
   // });
-
   return (
-    <group {...props} dispose={null} ref={roboRef}>
+    <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={0.048}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <group
@@ -175,13 +168,13 @@ export function Model(props) {
             geometry={nodes.Object_5.geometry}
             material={materials["blue.001"]}
           />
-          <mesh
+          {/* <mesh
             castShadow
             receiveShadow
             geometry={nodes.Object_26.geometry}
             material={materials.green}
             scale={3.25}
-          />
+          /> */}
           <mesh
             castShadow
             receiveShadow

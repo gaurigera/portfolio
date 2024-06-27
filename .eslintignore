@@ -1,0 +1,10 @@
+node_modules
+dist
+public
+.git
+.vim
+.yarn
+.vscode
+Model.jsx
+ModelCanvas.jsx
+RenderModel.jsx
