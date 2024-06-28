@@ -10,14 +10,16 @@ import { Logo } from "./icons/Logo";
 import { Link } from "react-router-dom";
 import { GithubIcon } from "./icons/Github";
 import { ThemeToggle } from "./ThemeToggle";
+import { useTheme } from "next-themes";
 
 export function Nav() {
+  const { theme } = useTheme();
   return (
-    <Navbar className="bg-transparent rounded-3xl sticky max-w-screen-md">
+    <Navbar isBlurred className="bg-transparent dark:bg-transparent/10 rounded-3xl max-w-screen-md">
       <NavbarContent justify="start">
         <ThemeToggle />
         <Link to={`https://github.com/gaurigera`} target="_blank">
-          <GithubIcon />
+          <GithubIcon fill={theme === "dark" ? "white" : "black"} />
         </Link>
       </NavbarContent>
       <NavbarContent justify="center">

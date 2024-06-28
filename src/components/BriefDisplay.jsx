@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export function BriefDisplay() {
   return (
     <Card
-      className="p-1 lg:p-3 border-none bg-background/40 dark:bg-transparent/50 sticky"
+      className="p-1 lg:p-3 border-none bg-background/40 dark:bg-transparent/15 sticky"
       shadow="sm"
       isBlurred={true}
       radius="lg"

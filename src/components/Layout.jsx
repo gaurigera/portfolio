@@ -1,21 +1,25 @@
 import About from "./About";
 import { BriefDisplay } from "./BriefDisplay";
+import { Experience } from "./Experience";
 import { Nav } from "./Navbar";
+import { Projects } from "./Project";
+import { Skills } from "./Skills";
 
 const Layout = () => {
   return (
-    <section className="w-full h-full dark:bg-slate-600">
-      <div className="h-full">
-        <div className="w-full flex justify-center">
-          <Nav />
+    <section className="w-full overflow-hidden h-screen">
+      <div className="w-full flex justify-center sticky">
+        <Nav />
+      </div>
+      <div className="px-5 lg:px-10 w-full flex mt-6">
+        <div className="lg:w-1/3 sticky h-fit">
+          <BriefDisplay />
         </div>
-        <div className="px-5 lg:px-10 w-full min-h-svh flex mt-6">
-          <div className="lg:w-1/3">
-            <BriefDisplay />
-          </div>
-          <div className="lg:w-2/3 h-svh px-10 scroll-auto">
+        <div className="lg:w-2/3 h-svh px-10 overflow-auto space-y-6">
           <About />
-          </div>
+          <Experience />
+          <Projects />
+          <Skills />
         </div>
       </div>
     </section>

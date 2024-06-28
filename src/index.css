@@ -20,3 +20,11 @@
     font-family: "Munro-narrow";
     src: url("../fonts/munro-font/MunroNarrow-vaO4.ttf");
 }
+
+h1 {
+    @apply font-munro text-5xl
+}
+
+h2 {
+    @apply font-munroLye font-thin 
+}
