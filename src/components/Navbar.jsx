@@ -17,7 +17,7 @@ export function Nav() {
   return (
     <Navbar
       isBlurred
-      className="bg-white/5 rounded-3xl max-w-screen-md mx-auto"
+      className="bg-white/5 rounded-3xl max-w-screen-lg mx-auto"
     >
       <NavbarContent justify="start">
         <ThemeToggle />

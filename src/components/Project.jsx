@@ -1,14 +1,22 @@
-import {
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Link,
-} from "@nextui-org/react";
+import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import { DotFilled } from "./icons/DotFilled";
+import { ExternalLink } from "./icons/ExternalLink";
+import { Link } from "react-router-dom";
 
 export function Projects() {
-  const ProjectList = [{}];
+  const ProjectList = [
+    {
+      bullet: "green",
+      selection: "selection:bg-green-300 dark:selection:bg-green-700",
+      heading: "Chatter",
+      points: [
+        "Implemented a realtime chat system using socket.io",
+        "Used NextJs for frontend to create an optimal UI.",
+      ],
+      link: "https://github.com/gaurigera/Chatter",
+      headingColor: "text-green-500",
+    },
+  ];
 
   return (
     <section className="space-y-1 px-3">
@@ -16,36 +24,46 @@ export function Projects() {
         <h1>Projects</h1>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-        <ProjectItem />
-        <ProjectItem />
-        <ProjectItem />
-        <ProjectItem />
+        {ProjectList.map((project, index) => {
+          return <ProjectItem {...project} key={index} />;
+        })}
       </div>
     </section>
   );
 }
 
-const ProjectItem = () => {
+const ProjectItem = ({
+  bullet,
+  selection,
+  heading,
+  headingColor,
+  points,
+  link,
+}) => {
   return (
-    <Card shadow="none" className="space-y-0.5 shadow-card bg-transparent">
+    <Card
+      shadow="none"
+      className={`space-y-0.5 shadow-card bg-transparent ${selection}`}
+    >
       <CardHeader>
-        <h2 className="text-pink-400">Heading</h2>
+        <h2 className={`${headingColor}`}>{heading}</h2>
       </CardHeader>
       <CardBody>
-        <div className="flex">
-          <div>
-            <DotFilled fill={"green"} />
-          </div>
-          <p className="text-xs">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-            blanditiis culpa explicabo illo totam ad earum nulla voluptate
-            inventore, cum pariatur veritatis non omnis est facere itaque at
-            neque ipsa!
-          </p>
-        </div>
+        {points.map((point, index) => {
+          return (
+            <div className="flex" key={index}>
+              <div>
+                <DotFilled fill={bullet} />
+              </div>
+              <p className="text-xs">{point}</p>
+            </div>
+          );
+        })}
       </CardBody>
       <CardFooter>
-        <Link>wjw</Link>
+        <Link className="text-xs" to={link}>
+          <ExternalLink />
+        </Link>
       </CardFooter>
     </Card>
   );

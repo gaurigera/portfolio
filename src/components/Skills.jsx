@@ -14,7 +14,7 @@ export function Skills() {
   return (
     <section>
       <h1 className="flex justify-center mb-2">Skills</h1>
-      <div className="grid grid-rows-3 md:grid-rows-2 lg:grid-rows-1 grid-flow-col justify-center gap-3 my-4">
+      <div className="grid grid-rows-3 md:grid-rows-2 lg:grid-rows-1 grid-flow-col justify-center justify-items-stretch gap-3 my-4">
         {skills.map((skill, index) => {
           return (
             <Chip key={index} className="text-md bg-white/15 shadow-md">

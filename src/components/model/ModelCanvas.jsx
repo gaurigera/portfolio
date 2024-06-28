@@ -7,7 +7,7 @@ const ModelCanvas = () => {
   const { progress } = useProgress();
   return (
     <div className="relative">
-      <div className="fixed left-44 -bottom-44 h-1/2 w-1/2">
+      <div className="fixed left-72 -bottom-48 h-1/2 w-1/2">
         {progress === 100 && <Message />}
       </div>
       <div className="fixed -left-10 -bottom-44 h-1/2 w-1/2 xl:left-5">
