@@ -22,7 +22,7 @@
 }
 
 h1 {
-    @apply font-munro text-5xl
+    @apply font-munro text-xl lg:text-5xl
 }
 
 h2 {

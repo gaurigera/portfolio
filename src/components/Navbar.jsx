@@ -15,7 +15,10 @@ import { useTheme } from "next-themes";
 export function Nav() {
   const { theme } = useTheme();
   return (
-    <Navbar isBlurred className="bg-transparent dark:bg-transparent/10 rounded-3xl max-w-screen-md">
+    <Navbar
+      isBlurred
+      className="bg-white/5 rounded-3xl max-w-screen-md mx-auto"
+    >
       <NavbarContent justify="start">
         <ThemeToggle />
         <Link to={`https://github.com/gaurigera`} target="_blank">

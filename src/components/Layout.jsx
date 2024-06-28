@@ -7,19 +7,20 @@ import { Skills } from "./Skills";
 
 const Layout = () => {
   return (
-    <section className="w-full overflow-hidden h-screen">
-      <div className="w-full flex justify-center sticky">
-        <Nav />
-      </div>
-      <div className="px-5 lg:px-10 w-full flex mt-6">
-        <div className="lg:w-1/3 sticky h-fit">
-          <BriefDisplay />
-        </div>
-        <div className="lg:w-2/3 h-svh px-10 overflow-auto space-y-6">
-          <About />
-          <Experience />
-          <Projects />
-          <Skills />
+    <section className="relative w-full h-full p-1 antialiased">
+      <Nav />
+      <BriefDisplay />
+      <div className="relative px-5 lg:px-10 w-full mt-6">
+        <div className="relative flex-grow">
+          <div className="flex">
+            <div className="md:w-1/3 flex-shrink-0"></div>
+            <div className="px-10 space-y-6">
+              <About />
+              <Experience />
+              <Projects />
+              <Skills />
+            </div>
+          </div>
         </div>
       </div>
     </section>

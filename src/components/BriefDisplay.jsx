@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export function BriefDisplay() {
   return (
     <Card
-      className="p-1 lg:p-3 border-none bg-background/40 dark:bg-transparent/15 sticky"
+      className="w-1/3 p-1 lg:p-3 border-none bg-background/40 dark:bg-transparent/15 fixed mt-7 left-5 z-40"
       shadow="sm"
       isBlurred={true}
       radius="lg"
@@ -21,16 +21,41 @@ export function BriefDisplay() {
 }
 
 const Contact = () => {
+  const contact = [
+    {
+      type: "Email",
+      value: "gaurigera@gmail.com",
+      link: "gaurigera@gmail.com",
+      color: "decoration-blue-300",
+    },
+    {
+      type: "LinkedIn",
+      value: "gaurigera",
+      link: "www.linkedin.com/in/gauri-gera-b7a224262",
+      color: "decoration-orange-400",
+    },
+    {
+      type: "X(twitter)",
+      value: "gaurigera",
+      link: "https://twitter.com/GauriGera",
+      color: "decoration-rose-400",
+    },
+  ];
   return (
     <div className="w-full -mt-2">
       <h2 className="font-munroLye">Contact</h2>
-      <div className="flex gap-1 pl-1">
-        <span>Email:</span>
-        <a href="mailto:gaurigera@gmail.com">gaurigera@gmail.com</a>
-      </div>
-      <div className="flex gap-4 underline pl-1">
-        <Link to={`www.linkedin.com/in/gauri-gera-b7a224262`}>LinkedIn</Link>
-        <Link to={`https://twitter.com/GauriGera`}>X(twitter)</Link>
+      <div className="space-y-0.5">
+        {contact.map((item, index) =>
+          <div className="flex gap-1 pl-1" key={index}>
+            <span>{item.type}/ </span>
+            <a
+              href={item.link}
+              className={`underline ${item.color}`}
+            >
+              {item.value}
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -41,7 +66,7 @@ const EducationSection = () => {
     <div className="w-full mt-2">
       <h2 className="font-munroLye">Education</h2>
       <div className="mb-1 pl-1">
-        <div className="w-full flex justify-between">
+        <div className="w-full flex justify-between text lg:text-md">
           <h3 className="italic">Amity University, Noida</h3>
           <span>9.41 CGPA</span>
         </div>

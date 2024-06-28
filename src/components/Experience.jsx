@@ -18,7 +18,7 @@ export const Experience = () => {
 
   return (
     <section>
-      <Card className="bg-transparent" shadow="sm">
+      <Card className="bg-transparent shadow-sm" shadow="none">
         <CardHeader>
           <h1>Experience</h1>
         </CardHeader>
