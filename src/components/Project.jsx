@@ -11,11 +11,11 @@ export function Projects() {
   const ProjectList = [{}];
 
   return (
-    <section className="space-y-1">
+    <section className="space-y-1 px-3">
       <div>
         <h1>Projects</h1>
       </div>
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
         <ProjectItem />
         <ProjectItem />
         <ProjectItem />

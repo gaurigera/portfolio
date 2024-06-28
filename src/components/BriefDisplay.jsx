@@ -1,10 +1,11 @@
 import { Card, CardHeader, CardBody } from "@nextui-org/card";
-import { Link } from "react-router-dom";
 
-export function BriefDisplay() {
+export function BriefDisplay({ isMobile }) {
   return (
     <Card
-      className="w-1/3 p-1 lg:p-3 border-none bg-background/40 dark:bg-transparent/15 fixed mt-7 left-5 z-40"
+      className={`p-1 lg:p-3 border-none bg-background/40 dark:bg-white/5 ${
+        isMobile ? "" : "fixed w-1/3 mt-7 left-5  z-40"
+      } `}
       shadow="sm"
       isBlurred={true}
       radius="lg"
@@ -45,17 +46,14 @@ const Contact = () => {
     <div className="w-full -mt-2">
       <h2 className="font-munroLye">Contact</h2>
       <div className="space-y-0.5">
-        {contact.map((item, index) =>
+        {contact.map((item, index) => (
           <div className="flex gap-1 pl-1" key={index}>
             <span>{item.type}/ </span>
-            <a
-              href={item.link}
-              className={`underline ${item.color}`}
-            >
+            <a href={item.link} className={`underline ${item.color}`}>
               {item.value}
             </a>
           </div>
-        )}
+        ))}
       </div>
     </div>
   );
