@@ -1,5 +1,6 @@
 import { Card, CardBody, CardHeader } from "@nextui-org/react";
 import { BulletArrow } from "./icons/BulletArrow";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 export const Experience = () => {
   const ExperienceList = [
@@ -35,17 +36,27 @@ export const Experience = () => {
 };
 
 const ExperienceItem = ({ item }) => {
+   const isMobile = useMediaQuery("(max-width: 768px)");
+   
   return (
     <div className="space-y-1">
-      <div className="flex text-lg justify-between">
-        <div className="flex space-x-1">
-          <h2>{item.role} |</h2>
-          <h2>{item.company}</h2>
-        </div>
+      {isMobile ? (
         <div>
-          <h2>{item.duration}</h2>
+          <h2>{item.role}</h2>
+          <h2>{item.company}</h2>
+          <h2 className="text-end">{item.duration}</h2>
         </div>
-      </div>
+      ) : (
+        <div className="flex text-lg justify-between">
+          <div className="flex space-x-1">
+            <h2>{item.role} |</h2>
+            <h2>{item.company}</h2>
+          </div>
+          <div>
+            <h2>{item.duration}</h2>
+          </div>
+        </div>
+      )}
       <div className="pl-1 space-y-0.5">
         {item.points.map((point, index) => {
           return (

@@ -1,10 +1,13 @@
 import { Card, CardHeader, CardBody } from "@nextui-org/card";
+import useMediaQuery from "../hooks/useMediaQuery";
 
-export function BriefDisplay({ isMobile }) {
+export function BriefDisplay() {
+  const isTablet = useMediaQuery("(max-width: 1024px)");
+  
   return (
     <Card
       className={`p-1 lg:p-3 border-none bg-background/40 dark:bg-white/5 ${
-        isMobile ? "" : "fixed w-1/3 mt-7 left-5  z-40"
+        isTablet ? "" : "fixed w-1/3 mt-7 left-5  z-40"
       } `}
       shadow="sm"
       isBlurred={true}
@@ -33,13 +36,13 @@ const Contact = () => {
       type: "LinkedIn",
       value: "gaurigera",
       link: "www.linkedin.com/in/gauri-gera-b7a224262",
-      color: "decoration-orange-400",
+      color: "decoration-orange-500",
     },
     {
       type: "X(twitter)",
       value: "gaurigera",
       link: "https://twitter.com/GauriGera",
-      color: "decoration-rose-400",
+      color: "decoration-rose-800",
     },
   ];
   return (
@@ -64,7 +67,7 @@ const EducationSection = () => {
     <div className="w-full mt-2">
       <h2 className="font-munroLye">Education</h2>
       <div className="mb-1 pl-1">
-        <div className="w-full flex justify-between text lg:text-md">
+        <div className="w-full md:flex justify-between text lg:text-md">
           <h3 className="italic">Amity University, Noida</h3>
           <span>9.41 CGPA</span>
         </div>
@@ -77,7 +80,7 @@ const EducationSection = () => {
         </div>
       </div>
       <div className="pl-1">
-        <div className="w-full flex justify-between">
+        <div className="w-full md:flex justify-between">
           <h3 className="italic">DPSSL</h3>
           <span>87.4%</span>
         </div>
