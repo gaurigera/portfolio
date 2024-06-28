@@ -1,15 +1,20 @@
-import { OrbitControls, Preload } from "@react-three/drei";
+import { OrbitControls, Preload, useProgress } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import RenderModel from "./RenderModel";
+import { Message } from "./Message";
 
 const ModelCanvas = () => {
+  const { progress } = useProgress();
   return (
-    <>
-      <div className="fixed left-0 -bottom-44 h-1/2 w-1/2">
+    <div className="relative">
+      <div className="fixed left-44 -bottom-44 h-1/2 w-1/2">
+        {progress === 100 && <Message />}
+      </div>
+      <div className="fixed -left-10 -bottom-44 h-1/2 w-1/2 xl:left-5">
         <Canvas
           dpr={[1, 1.9]}
           gl={{ preserveDrawingBuffer: true, antialias: true }}
-          className="z-0 max-w-96"
+          className="max-w-96"
         >
           <OrbitControls
             enableZoom={false}
@@ -20,7 +25,7 @@ const ModelCanvas = () => {
           <Preload all />
         </Canvas>
       </div>
-    </>
+    </div>
   );
 };
 

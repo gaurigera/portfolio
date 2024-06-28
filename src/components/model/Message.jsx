@@ -1,7 +1,7 @@
-import { MessageBubble } from "../icons/MessageBubble";
-
-export function Message() {
-  return <div>
-    <MessageBubble />
-  </div>;
+export function Message({ props }) {
+  return (
+    <div>
+      <p>Hi! lalalalala</p>
+    </div>
+  );
 }

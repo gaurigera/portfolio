@@ -23,7 +23,7 @@ function RenderModel() {
         />
       </group>
       <mesh>
-        <ambientLight intensity={theme === 'dark' ? 1.8 : 3.4} color={"white"} />
+        <ambientLight intensity={theme === 'dark' ? 1.2 : 3.4} color={"white"} />
         <directionalLight intensity={2.8} color={"pink"} position={[0, 2, 3]} />
         <Model position={[0, 0, 0]} />
       </mesh>
