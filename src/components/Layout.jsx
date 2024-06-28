@@ -1,18 +1,22 @@
+import About from "./About";
 import { BriefDisplay } from "./BriefDisplay";
 import { Nav } from "./Navbar";
-import ModelCanvas from "./model/ModelCanvas";
 
 const Layout = () => {
   return (
-    <section
-      className="w-screen h-dvh bg-pink-200"
-    >
+    <section className="w-full h-full dark:bg-slate-600">
       <div className="h-full">
-        <div>
+        <div className="w-full flex justify-center">
           <Nav />
         </div>
-        <BriefDisplay />
-        <ModelCanvas />
+        <div className="px-5 lg:px-10 w-full min-h-svh flex mt-6">
+          <div className="lg:w-1/3">
+            <BriefDisplay />
+          </div>
+          <div className="lg:w-2/3 h-svh px-10 scroll-auto">
+          <About />
+          </div>
+        </div>
       </div>
     </section>
   );

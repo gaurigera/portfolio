@@ -15,6 +15,9 @@ export default {
       fontFamily: {
         worksans: ["Work Sans", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
+        munro: ["Munro-main", "sans-serif"],
+        munroNarrow: ["Munro-narrow", "sans-serif"],
+        munroLye: ["Munro-2lye", "sans-serif"],
         poetsen: ["Poetsen One", "sans-serif"],
         sourceCode: ["Source Code Pro", "sans-serif"],
         orbitron: ["Orbitron", "sans-serif"],

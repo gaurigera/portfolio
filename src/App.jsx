@@ -3,7 +3,7 @@ import Layout from "./components/Layout";
 
 export default function App() {
   return (
-    <main>
+    <main className="font-mono">
       <Router>
         <Routes>
           <Route path="/" element={<Layout />} />
