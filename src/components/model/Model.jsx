@@ -10,7 +10,7 @@ import { useGLTF } from "@react-three/drei";
 
 export function Model(props) {
   const { nodes, materials } = useGLTF(
-    "/model/baby_robot/scene.gltf"
+    "/portfolio/model/baby_robot/scene.gltf"
   );
 
   const headRef = useRef();

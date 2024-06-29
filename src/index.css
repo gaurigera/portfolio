@@ -2,23 +2,23 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap'); */
 
 @font-face {
     font-family: "Munro-2lye";
-    src: url("/fonts/munro-font/Munro-2LYe.ttf");
+    src: url("/portfolio/fonts/munro-font/Munro-2LYe.ttf");
 }
 
 @font-face {
     font-family: "Munro-main";
-    src: url("/fonts/munro-font/MunroSmall-wPZw.ttf");
+    src: url("/portfolio/fonts/munro-font/MunroSmall-wPZw.ttf");
 }
 
 @font-face {
     font-family: "Munro-narrow";
-    src: url("/fonts/munro-font/MunroNarrow-vaO4.ttf");
+    src: url("/portfolio/fonts/munro-font/MunroNarrow-vaO4.ttf");
 }
 
 h1 {

@@ -6,7 +6,7 @@ export default function App() {
     <main className="font-mono">
       <Router>
         <Routes>
-          <Route path="/" element={<Layout />} />
+          <Route path="/portfolio/" element={<Layout />} />
         </Routes>
       </Router>
     </main>
