@@ -8,17 +8,17 @@
 
 @font-face {
     font-family: "Munro-2lye";
-    src: url("../fonts/munro-font/Munro-2LYe.ttf");
+    src: url("/fonts/munro-font/Munro-2LYe.ttf");
 }
 
 @font-face {
     font-family: "Munro-main";
-    src: url("../fonts/munro-font/MunroSmall-wPZw.ttf");
+    src: url("/fonts/munro-font/MunroSmall-wPZw.ttf");
 }
 
 @font-face {
     font-family: "Munro-narrow";
-    src: url("../fonts/munro-font/MunroNarrow-vaO4.ttf");
+    src: url("/fonts/munro-font/MunroNarrow-vaO4.ttf");
 }
 
 h1 {

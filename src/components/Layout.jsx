@@ -1,3 +1,4 @@
+import { lazy } from "react";
 import useMediaQuery from "../hooks/useMediaQuery";
 import About from "./About";
 import { BriefDisplay } from "./BriefDisplay";
@@ -5,7 +6,7 @@ import { Experience } from "./Experience";
 import { Nav } from "./Navbar";
 import { Projects } from "./Project";
 import { Skills } from "./Skills";
-import ModelCanvas from "./model/ModelCanvas";
+const ModelCanvas = lazy(()=> import( "./model/ModelCanvas"));
 
 const Layout = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");

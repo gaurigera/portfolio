@@ -1,7 +1,5 @@
-import { PerspectiveCamera, useHelper } from "@react-three/drei";
+import { PerspectiveCamera } from "@react-three/drei";
 import { Model } from "./Model.jsx";
-import { CameraHelper } from "three";
-import { useRef } from "react";
 import { useTheme } from "next-themes";
 
 function RenderModel() {

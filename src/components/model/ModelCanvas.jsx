@@ -1,10 +1,12 @@
+import { lazy } from "react";
 import { OrbitControls, Preload, useProgress } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import RenderModel from "./RenderModel";
+const RenderModel = lazy(() => import("./RenderModel"));
 import { Message } from "./Message";
 
 const ModelCanvas = () => {
   const { progress } = useProgress();
+  
   return (
     <div className="relative">
       <div className="fixed left-72 -bottom-48 h-1/2 w-1/2">

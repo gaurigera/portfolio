@@ -7,12 +7,10 @@ Title: Baby Robot
 */
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
 
 export function Model(props) {
   const { nodes, materials } = useGLTF(
-    "/src/assets/model/baby_robot/scene.gltf"
+    "/model/baby_robot/scene.gltf"
   );
 
   const headRef = useRef();
