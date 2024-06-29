@@ -1,6 +1,6 @@
 import { Card, CardHeader, CardBody } from "@nextui-org/card";
 import useMediaQuery from "../hooks/useMediaQuery";
-
+import { ScrollShadow } from "@nextui-org/scroll-shadow";
 export function BriefDisplay() {
   const isTablet = useMediaQuery("(max-width: 1024px)");
   
@@ -17,8 +17,13 @@ export function BriefDisplay() {
         <h1 className="font-munroLye text-lg">Quick Overview</h1>
       </CardHeader>
       <CardBody className="flex flex-col">
-        <Contact />
-        <EducationSection />
+        <ScrollShadow
+          hideScrollBar
+          className={`${isTablet ? "" : "max-h-96"} -mt-1 pt-2 pb-6`}
+        >
+          <Contact />
+          <EducationSection />
+        </ScrollShadow>
       </CardBody>
     </Card>
   );

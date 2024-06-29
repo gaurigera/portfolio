@@ -36,6 +36,9 @@ const Layout = () => {
                 <div className="relative px-10 space-y-6">
                   <About />
                   <Experience />
+                  <Experience />
+                  <Experience />
+                  <Experience />
                   <Projects />
                   <Skills />
                 </div>

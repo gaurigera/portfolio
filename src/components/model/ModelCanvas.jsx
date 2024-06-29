@@ -13,11 +13,12 @@ const ModelCanvas = () => {
   }, [progress, errors]);
 
   return (
-    <div className="sticky bottom-0 top-[84%] max-w-[265px] max-h-[265px]">
+    <div className="sticky bottom-0 top-[85%] max-w-[265px] max-h-[265px]">
       <div className="flex flex-row-reverse">
         <Message />
         <Canvas
           dpr={[1, 1.9]}
+          frameloop="demand"
           gl={{ preserveDrawingBuffer: true, antialias: true }}
           className="max-w-[255px] max-h-[255px] bg-transparent"
         >
