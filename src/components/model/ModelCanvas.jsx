@@ -1,22 +1,25 @@
-import { lazy } from "react";
+import { lazy, useEffect } from "react";
 import { OrbitControls, Preload, useProgress } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 const RenderModel = lazy(() => import("./RenderModel"));
 import { Message } from "./Message";
 
 const ModelCanvas = () => {
-  const { progress } = useProgress();
-  
+  const { progress, errors } = useProgress();
+  useEffect(() => {
+    if (errors) {
+      return;
+    }
+  }, [progress, errors]);
+
   return (
-    <div className="relative">
-      <div className="fixed left-72 -bottom-48 h-1/2 w-1/2">
-        {progress === 100 && <Message />}
-      </div>
-      <div className="fixed -left-10 -bottom-44 h-1/2 w-1/2 xl:left-5">
+    <div className="sticky bottom-0 top-[84%] max-w-[265px] max-h-[265px]">
+      <div className="flex flex-row-reverse">
+        <Message />
         <Canvas
           dpr={[1, 1.9]}
           gl={{ preserveDrawingBuffer: true, antialias: true }}
-          className="max-w-96"
+          className="max-w-[255px] max-h-[255px] bg-transparent"
         >
           <OrbitControls
             enableZoom={false}

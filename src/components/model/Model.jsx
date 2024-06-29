@@ -5,16 +5,13 @@ License: CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 Source: https://sketchfab.com/3d-models/baby-robot-769ba821f3594e4aaa905baf417e04fe
 Title: Baby Robot
 */
-import React, { useRef } from "react";
+import React from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Model(props) {
   const { nodes, materials } = useGLTF(
     "/portfolio/model/baby_robot/scene.gltf"
   );
-
-  const headRef = useRef();
-  const tl = useRef();
 
   // useGSAP(() => {
   //   tl.current = gsap.timeline({ repeat: -1, yoyo: true });
@@ -51,7 +48,7 @@ export function Model(props) {
             />
           </group>
           <group
-            ref={headRef}
+            // ref={headRef}
             position={[-0.122, 5.396, 0.088]}
             rotation={[-0.539, 0.394, 0.302]}
           >

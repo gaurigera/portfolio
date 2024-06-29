@@ -6,12 +6,12 @@ export function BriefDisplay() {
   
   return (
     <Card
-      className={`p-1 lg:p-3 border-none bg-background/40 dark:bg-white/5 ${
-        isTablet ? "" : "fixed w-1/3 mt-7 left-5  z-40"
+      className={`h-fit p-1 lg:p-3 border-none bg-background/40 dark:bg-white/5 ${
+        isTablet ? "" : " top-20 sticky w-full mt-7"
       } `}
       shadow="sm"
       isBlurred={true}
-      radius="lg"
+      radius="xl"
     >
       <CardHeader>
         <h1 className="font-munroLye text-lg">Quick Overview</h1>

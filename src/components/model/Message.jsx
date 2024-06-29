@@ -1,7 +1,8 @@
-export function Message({ props }) {
+export function Message() {
   return (
-    <div className="max-w-52 text-end">
-      <p>Hi! I am still under development. New features coming soon</p>
+    <div className="w-fit h-fit max-w-56 text-xs text-pretty space-y-0.5 rounded-lg ring ring-white/10 p-1">
+      <p>Hi! This is still under development.</p>
+      <p>Additions coming soon.</p>
     </div>
   );
 }
