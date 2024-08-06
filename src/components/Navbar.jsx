@@ -31,7 +31,10 @@ export function Nav() {
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent justify="end">
-        <Link to={"#"} target="_blank">
+        <Link
+          to={`https://drive.google.com/file/d/1nqkWgxUJz6QFACdPE2tS1SgEbIXZwFKs/view?usp=sharing`}
+          target="_blank"
+        >
           <span className="font-munro text-lg">Resume</span>
         </Link>
       </NavbarContent>
