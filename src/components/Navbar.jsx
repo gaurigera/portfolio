@@ -9,11 +9,12 @@ import { GithubIcon } from "./icons/Github";
 import { ThemeToggle } from "./ThemeToggle";
 import { useTheme } from "next-themes";
 import { ColorVariants } from "../lib/colorVariants";
-import { useColorVariant } from "../hooks/useColorVariant";
+import { useContext } from "react";
+import ColorThemeContext from "../lib/context/colorThemeContext";
 
 export function Nav() {
   const { theme } = useTheme();
-  const { colorTheme } = useColorVariant();
+  const { colorTheme } = useContext(ColorThemeContext);
 
   return (
     <Navbar

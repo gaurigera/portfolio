@@ -27,7 +27,7 @@ const Layout = () => {
           </div>
         ) : (
           <div className="flex w-full mx-auto px-5 lg:px-8 max-w-screen-2xl">
-            <div className="w-1/3">
+            <div className="w-1/3 relative">
               <BriefDisplay />
               <ModelCanvas />
             </div>

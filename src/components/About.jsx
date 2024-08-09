@@ -1,4 +1,8 @@
 import { Code } from "@nextui-org/code";
+import { useTheme } from "next-themes";
+import ColorThemeContext from "../lib/context/colorThemeContext";
+import { useContext } from "react";
+import { ColorVariants } from "../lib/colorVariants";
 
 const About = () => {
   return (
@@ -23,7 +27,10 @@ const About = () => {
 };
 
 const CodeTxt = ({ text, className }) => {
-  return <Code className={`text-lg ${className}`}>{text}</Code>;
+  const { theme } = useTheme();
+  const { colorTheme } = useContext(ColorThemeContext);
+
+  return <Code className={`text-lg ${className} ${ColorVariants[colorTheme][theme]["card"]}`}>{text}</Code>;
 };
 
 export default About;

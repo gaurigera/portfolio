@@ -3,11 +3,12 @@ import { BulletArrow } from "./icons/BulletArrow";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { ColorVariants } from "../lib/colorVariants";
 import { useTheme } from "next-themes";
-import { useColorVariant } from "../hooks/useColorVariant";
+import { useContext } from "react";
+import ColorThemeContext from "../lib/context/colorThemeContext";
 
 export const Experience = () => {
   const {theme} = useTheme()
-  const {colorTheme} = useColorVariant()
+  const {colorTheme} = useContext(ColorThemeContext)
 
   const ExperienceList = [
     {

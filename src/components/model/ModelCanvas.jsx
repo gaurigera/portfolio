@@ -1,4 +1,4 @@
-import { lazy, useEffect } from "react";
+import { lazy, useEffect, useRef, useState } from "react";
 import { OrbitControls, Preload, useProgress } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 const RenderModel = lazy(() => import("./RenderModel"));
@@ -12,11 +12,51 @@ const ModelCanvas = () => {
     }
   }, [progress, errors]);
 
+  const canvasRef = useRef(null);
+  const [key, setKey] = useState(0); // State to force re-render of the Canvas
+
+  useEffect(() => {
+    const canvasElement = canvasRef.current;
+
+    if (!canvasElement) return;
+
+    const handleContextLost = (event) => {
+      event.preventDefault();
+      console.error("WebGL context lost.");
+    };
+
+    const handleContextRestored = () => {
+      console.log("WebGL context restored.");
+      // Reinitialize or reload your 3D scene here
+      setKey((prevKey) => prevKey + 1); // Force re-render by updating key
+    };
+
+    canvasElement.addEventListener(
+      "webglcontextlost",
+      handleContextLost,
+      false
+    );
+    canvasElement.addEventListener(
+      "webglcontextrestored",
+      handleContextRestored,
+      false
+    );
+
+    return () => {
+      canvasElement.removeEventListener("webglcontextlost", handleContextLost);
+      canvasElement.removeEventListener(
+        "webglcontextrestored",
+        handleContextRestored
+      );
+    };
+  }, []);
+
   return (
-    <div className="sticky bottom-0 top-[85%] max-w-[265px] max-h-[265px]">
+    <div className="border-0 sticky top-full bottom-0 max-w-[265px] max-h-[265px] -z-10">
       <div className="flex flex-row-reverse">
         <Message />
         <Canvas
+          ref={canvasRef}
           dpr={[1, 1.9]}
           frameloop="demand"
           gl={{ preserveDrawingBuffer: true, antialias: true }}
@@ -35,5 +75,4 @@ const ModelCanvas = () => {
   );
 };
 
-// The X axis is red, the Y axis is green and the Z axis is blue.
 export default ModelCanvas;

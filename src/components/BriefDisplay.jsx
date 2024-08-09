@@ -3,12 +3,13 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import { ScrollShadow } from "@nextui-org/scroll-shadow";
 import { useTheme } from "next-themes";
 import { ColorVariants } from "../lib/colorVariants";
-import { useColorVariant } from "../hooks/useColorVariant";
+import { useContext } from "react";
+import ColorThemeContext from "../lib/context/colorThemeContext";
 
 export function BriefDisplay() {
   const isTablet = useMediaQuery("(max-width: 1024px)");
   const { theme } = useTheme();
-  const { colorTheme } = useColorVariant();
+  const { colorTheme } = useContext(ColorThemeContext);
  
   return (
     <Card
