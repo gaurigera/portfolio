@@ -1,18 +1,25 @@
 import { Card, CardBody, CardHeader } from "@nextui-org/react";
 import { BulletArrow } from "./icons/BulletArrow";
 import useMediaQuery from "../hooks/useMediaQuery";
+import { ColorVariants } from "../lib/colorVariants";
+import { useTheme } from "next-themes";
+import { useContext } from "react";
+import ColorThemeContext from "../lib/context/colorThemeContext";
 
 export const Experience = () => {
+  const {theme} = useTheme()
+  const {colorTheme} = useContext(ColorThemeContext)
+
   const ExperienceList = [
     {
       role: "Web Developer Intern",
       company: "The Assigner",
-      duration: "April 2024 - Present",
+      duration: "April 2024 - July 2024",
       points: [
         `Working in a startup allowed me to explore many domains. I was not only responsible for delivering good & clean code but also project and team planning.`,
         `Created 30+ reusable react components, handled state management and data fetching.`,
-        `Designed and implemented the required architecture in AWS along with deployment on Hostinger using CI/CD pipelining.`,
-        `Planned an optimal backend architecture along with implementation.`
+        `Designed and implemented the required architecture in AWS (using EC2, S3 etc) along with deployment on Hostinger using CI/CD pipelining.`,
+        `Planned an optimal backend architecture along with implementation in NodeJs.`
       ],
     },
   ];
@@ -21,7 +28,7 @@ export const Experience = () => {
     <section>
       <Card className="bg-transparent shadow-sm" shadow="none">
         <CardHeader>
-          <h1>Experience</h1>
+          <h1 className={`${ColorVariants[colorTheme][theme]["text"]}`}>Experience</h1>
         </CardHeader>
         <CardBody>
           <div>

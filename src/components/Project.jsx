@@ -2,12 +2,19 @@ import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import { DotFilled } from "./icons/DotFilled";
 import { ExternalLink } from "./icons/ExternalLink";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import ColorThemeContext from "../lib/context/colorThemeContext";
+import { ColorVariants } from "../lib/colorVariants";
+import { useTheme } from "next-themes";
 
 export function Projects() {
+  const { colorTheme } = useContext(ColorThemeContext);
+  const { theme } = useTheme();
+
   const ProjectList = [
     {
       bullet: "green",
-      selection: "selection:bg-green-300 dark:selection:bg-green-700",
+      selection: "selection:text-green-500 dark:selection:text-green-700",
       heading: "Chatter",
       points: [
         "Implemented a realtime chat system using socket.io",
@@ -32,7 +39,9 @@ export function Projects() {
   return (
     <section className="space-y-1 px-3">
       <div>
-        <h1>Projects</h1>
+        <h1 className={`${ColorVariants[colorTheme][theme]["text"]}`}>
+          Projects
+        </h1>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
         {ProjectList.map((project, index) => {

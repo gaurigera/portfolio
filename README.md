@@ -1,3 +1,3 @@
-# Version 1 of my very own portfolio!
+# My very own portfolio!
 
-Finally created a portfolio I am somewhat content with. Spent a good while going back and forth between ideas.
+This is created taking inspiration from the tamagui website. Consider checking it out!
