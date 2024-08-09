@@ -87,7 +87,7 @@ const EducationSection = () => {
       </div>
       <div className="pl-1">
         <div className="w-full md:flex justify-between">
-          <h3 className="italic">DPSSL</h3>
+          <h3 className="italic">DPS Sushant Lok</h3>
           <span>87.4%</span>
         </div>
         <div className="text-xs text-justify pl-1 space-y-1">
