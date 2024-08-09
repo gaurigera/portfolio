@@ -1,6 +1,7 @@
 import { Card, CardHeader, CardBody } from "@nextui-org/card";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { ScrollShadow } from "@nextui-org/scroll-shadow";
+
 export function BriefDisplay() {
   const isTablet = useMediaQuery("(max-width: 1024px)");
   
@@ -34,13 +35,13 @@ const Contact = () => {
     {
       type: "Email",
       value: "gaurigera@gmail.com",
-      link: "gaurigera@gmail.com",
+      link: "mailto:gaurigera@gmail.com",
       color: "decoration-blue-300",
     },
     {
       type: "LinkedIn",
       value: "gaurigera",
-      link: "www.linkedin.com/in/gauri-gera-b7a224262",
+      link: "https://www.linkedin.com/in/gauri-gera-b7a224262",
       color: "decoration-orange-500",
     },
     {
@@ -57,7 +58,7 @@ const Contact = () => {
         {contact.map((item, index) => (
           <div className="flex gap-1 pl-1" key={index}>
             <span>{item.type}/ </span>
-            <a href={item.link} className={`underline ${item.color}`}>
+            <a href={item.link} target="_blank" className={`underline ${item.color}`}>
               {item.value}
             </a>
           </div>
