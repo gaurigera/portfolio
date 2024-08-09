@@ -6,13 +6,13 @@ This is created taking inspiration from the tamagui website. Consider checking i
 Clone the project
 
 ```bash
-  git clone https://github.com/gaurigera/posrtfolio.git
+  git clone https://github.com/gaurigera/portfolio.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd posrtfolio
+  cd portfolio
 ```
 
 Install dependencies
