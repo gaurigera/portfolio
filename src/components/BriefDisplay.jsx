@@ -1,20 +1,30 @@
 import { Card, CardHeader, CardBody } from "@nextui-org/card";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { ScrollShadow } from "@nextui-org/scroll-shadow";
+import { useTheme } from "next-themes";
+import { ColorVariants } from "../lib/colorVariants";
+import { useColorVariant } from "../hooks/useColorVariant";
+
 export function BriefDisplay() {
   const isTablet = useMediaQuery("(max-width: 1024px)");
-  
+  const { theme } = useTheme();
+  const { colorTheme } = useColorVariant();
+ 
   return (
     <Card
-      className={`h-fit p-1 lg:p-3 border-none bg-background/40 dark:bg-white/5 ${
-        isTablet ? "" : " top-20 sticky w-full mt-7"
-      } `}
+      className={`h-fit p-1 lg:p-3 border-none ${
+        ColorVariants[colorTheme][theme]["gradient"]
+      } ${isTablet ? "" : " top-20 sticky w-full mt-7"} `}
       shadow="sm"
       isBlurred={true}
       radius="xl"
     >
       <CardHeader>
-        <h1 className="font-munroLye text-lg">Quick Overview</h1>
+        <h1
+          className={`font-munroLye text-lg ${ColorVariants[colorTheme]["light"]["text"]}`}
+        >
+          Quick Overview
+        </h1>
       </CardHeader>
       <CardBody className="flex flex-col">
         <ScrollShadow

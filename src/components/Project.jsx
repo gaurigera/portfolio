@@ -7,7 +7,7 @@ export function Projects() {
   const ProjectList = [
     {
       bullet: "green",
-      selection: "selection:bg-green-300 dark:selection:bg-green-700",
+      selection: "selection:text-green-500 dark:selection:text-green-700",
       heading: "Chatter",
       points: [
         "Implemented a realtime chat system using socket.io",

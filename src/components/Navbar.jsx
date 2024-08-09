@@ -2,18 +2,19 @@ import {
   Navbar,
   NavbarBrand,
   NavbarContent,
-  NavbarMenuToggle,
-  NavbarMenu,
-  NavbarMenuItem,
 } from "@nextui-org/navbar";
 import { Logo } from "./icons/Logo";
 import { Link } from "react-router-dom";
 import { GithubIcon } from "./icons/Github";
 import { ThemeToggle } from "./ThemeToggle";
 import { useTheme } from "next-themes";
+import { ColorVariants } from "../lib/colorVariants";
+import { useColorVariant } from "../hooks/useColorVariant";
 
 export function Nav() {
   const { theme } = useTheme();
+  const { colorTheme } = useColorVariant();
+
   return (
     <Navbar
       isBlurred
@@ -32,7 +33,7 @@ export function Nav() {
       </NavbarContent>
       <NavbarContent justify="end">
         <Link to={"#"} target="_blank">
-          <span className="font-munro text-lg">Resume</span>
+          <span className={`font-munro text-lg ${ColorVariants[colorTheme][theme]["text"]}`}>Resume</span>
         </Link>
       </NavbarContent>
     </Navbar>
