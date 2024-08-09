@@ -44,7 +44,6 @@ const Layout = () => {
           </div>
         )}
       </section>
-
     </>
   );
 };

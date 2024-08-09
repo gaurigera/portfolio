@@ -25,7 +25,7 @@ export function Projects() {
     },
     {
       bullet: "blue",
-      selection: "selection:bg-blue-300 dark:selection:bg-blue-700",
+      selection: "selection:text-blue-300 dark:selection:text-blue-700",
       heading: "KanbanFlo",
       points: [
         "Implemented a trello like project management application using MERN stack.",
