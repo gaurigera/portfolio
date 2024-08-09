@@ -3,11 +3,11 @@ import App from "./App.jsx";
 import "./index.css";
 import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
-import React from "react";
+// import React from "react";
 import ColorThemeContextProvider from "./lib/context/colorThemeContextProvider.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <ColorThemeContextProvider>
       <NextUIProvider>
         <NextThemesProvider attribute="class" defaultTheme="dark">
@@ -15,5 +15,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </NextThemesProvider>
       </NextUIProvider>
     </ColorThemeContextProvider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
