@@ -16,6 +16,17 @@ export function Projects() {
       link: "https://github.com/gaurigera/Chatter",
       headingColor: "text-green-500",
     },
+    {
+      bullet: "blue",
+      selection: "selection:bg-blue-300 dark:selection:bg-blue-700",
+      heading: "KanbanFlo",
+      points: [
+        "Implemented a trello like project management application using MERN stack.",
+        "Handled users and their different projects, allowing different roles such as viewing, commenting and editing.",
+      ],
+      link: "https://github.com/gaurigera/KanbanFlo",
+      headingColor: "text-blue-500",
+    },
   ];
 
   return (
