@@ -12,6 +12,17 @@ export const Experience = () => {
 
   const ExperienceList = [
     {
+      role: "Software Engineer Intern",
+      company: "Ciena",
+      duration: "January 2025 - Present",
+      points: [
+        `Contributed to the development of an AI-powered application utilizing a .NET backend and an Angular frontend.`,
+        `Enhanced reliability and performance by writing and executing comprehensive unit tests.`,
+        `Implemented small to medium-sized features to enhance application capabilities.`,
+        `Gained practical knowledge of operational terminologies of Large Language Models (LLMs) within a commercial software environment.`,
+      ],
+    },
+    {
       role: "Web Developer Intern",
       company: "The Assigner",
       duration: "April 2024 - July 2024",
@@ -19,7 +30,7 @@ export const Experience = () => {
         `Working in a startup allowed me to explore many domains. I was not only responsible for delivering good & clean code but also project and team planning.`,
         `Created 30+ reusable react components, handled state management and data fetching.`,
         `Designed and implemented the required architecture in AWS (using EC2, S3 etc) along with deployment on Hostinger using CI/CD pipelining.`,
-        `Planned an optimal backend architecture along with implementation in NodeJs.`
+        `Planned an optimal backend architecture along with implementation in NodeJs.`,
       ],
     },
   ];
